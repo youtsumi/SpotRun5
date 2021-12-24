@@ -1,0 +1,29 @@
+description: spotTask
+tasks:
+  isr:
+    class: lsst.ip.isr.isrTask.IsrTask
+    config:
+      connections.outputExposure: 'postISRCCD'
+      doBias: True
+      doVariance: True
+      doLinearize: False
+      doCrosstalk: False
+      doDefect: False
+      doNanMasking: True
+      doInterpolate: True
+      doBrighterFatter: False
+      doDark: False
+      doFlat: False
+      doOverscan: True
+      doApplyGains: True
+      doFringe: False
+  characterizeSpots:
+    class: mixcoatl.characterizeSpots.CharacterizeSpotsTask
+  gridfit:
+    class: mixcoatl.gridFitTask.GridFitTask
+#    connections.postISRCCD.bbox : 'postISRCCD.bbox'
+#      config:
+#        neighborDistanceLowerBound: 59 
+#        neighborDistanceUpperBound: 71
+
+
