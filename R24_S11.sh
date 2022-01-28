@@ -41,9 +41,9 @@ if test ! -f "${workdir}"; then
 fi
 cd ${workdir}
 
-source /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2021_51/loadLSST.bash
+source /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2021_52/loadLSST.bash
 setup lsst_distrib
-
+setup -r /sdf/home/j/jchiang/dev/daf_butler -j
 
 pipetask run \
     -b ${REPO} \
